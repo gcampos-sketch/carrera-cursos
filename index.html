@@ -4,204 +4,328 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plan de cursos para vender Adereso</title>
-<link rel="stylesheet" href="style.css">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --ink-faint: #8a8a8a;
+    --paper: #faf8f4;
+    --card: #ffffff;
+    --line: #e5e1d8;
+    --accent: #b4471f;
+    --accent-soft: #f3e6df;
+    --badge-bg: #1a1a1a;
+    --badge-ink: #faf8f4;
+    --max: 820px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    line-height: 1.6;
+    padding: 64px 24px 96px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: var(--max); margin: 0 auto; }
+
+  header.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 40px;
+  }
+  .kicker {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .date {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+  }
+
+  h1 {
+    font-size: clamp(38px, 7vw, 62px);
+    line-height: 1.04;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+
+  .intro {
+    font-size: 18px;
+    color: var(--ink-soft);
+    border-left: 3px solid var(--accent);
+    padding-left: 22px;
+    margin-bottom: 48px;
+  }
+  .intro strong { color: var(--ink); font-weight: 600; }
+
+  section { margin-bottom: 52px; }
+
+  h2 {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 26px;
+    font-weight: 600;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 24px 26px;
+    margin-bottom: 16px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  }
+
+  .card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .card-title {
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .badge {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--badge-bg);
+    color: var(--badge-ink);
+    padding: 4px 11px;
+    border-radius: 100px;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+  .card p { color: var(--ink-soft); margin-bottom: 14px; font-size: 16.5px; }
+  .card p strong { color: var(--ink); font-weight: 600; }
+
+  a.link {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+    border-bottom: 1px solid var(--accent-soft);
+    padding-bottom: 2px;
+  }
+  a.link:hover { border-bottom-color: var(--accent); }
+  a.link::after { content: "\2192"; }
+
+  .startup ol { margin: 0 0 16px 20px; }
+  .startup li { color: var(--ink-soft); margin-bottom: 6px; padding-left: 4px; }
+  .startup li strong { color: var(--ink); }
+  .tips { list-style: none; margin-top: 8px; }
+  .tips li {
+    color: var(--ink-soft);
+    padding-left: 22px;
+    position: relative;
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+  .tips li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 560px) {
+    body { padding: 40px 18px 72px; }
+    .card { padding: 20px; }
+  }
+
+  @media print {
+    body { padding: 0; background: #fff; }
+    .card { break-inside: avoid; box-shadow: none; }
+    .card:hover { transform: none; }
+  }
+</style>
 </head>
 <body>
-<!-- report-kit -->
-<div class="report"><div class="report-wrap">
+<div class="wrap">
 
-  <header class="report-header">
-    <div class="report-header-left">
-      <span class="report-from">Plan de aprendizaje</span>
-    </div>
-    <span class="report-date" id="reportDate"></span>
+  <header class="top">
+    <span class="kicker">Plan de aprendizaje</span>
+    <span class="date">Julio 2026</span>
   </header>
 
-  <h1 class="report-headline">Cursos de Platzi<br>para vender Adereso</h1>
+  <h1>Cursos de Platzi para vender Adereso</h1>
 
-  <div class="report-intro">
-    <p><strong>Objetivo: convertirte en un Account Executive de SaaS B2B que vende IA conversacional a retail y ecommerce.</strong> Adereso vende software a empresas con ciclos largos y varios decisores, integra CRMs como HubSpot y Salesforce, y su producto es IA generativa (GPT-4, Claude) sobre WhatsApp. Tu formación debe cubrir cuatro frentes: el ciclo B2B, el manejo del CRM, la negociación y el discurso de IA. Este plan prioriza 11 rutas de Platzi en ese orden.</p>
-  </div>
+  <p class="intro">
+    <strong>Objetivo: convertirte en un Account Executive de SaaS B2B que vende IA conversacional a retail y ecommerce.</strong>
+    Adereso vende software a empresas con ciclos largos y varios decisores, integra CRMs como HubSpot y Salesforce, y su producto es IA generativa (GPT-4, Claude) sobre WhatsApp. Tu formación debe cubrir cuatro frentes: el ciclo B2B, el manejo del CRM, la negociación y el discurso de IA. Este plan prioriza 11 rutas de Platzi en ese orden.
+  </p>
 
-  <hr class="report-rule">
+  <section>
+    <h2>I. Núcleo del rol comercial</h2>
 
-  <main class="report-body">
-
-    <section class="report-section">
-      <div class="section-header"><h2 class="section-heading">I. Núcleo del rol comercial</h2></div>
-      <div class="section-items">
-
-        <article class="report-item">
-          <div class="item-label">
-            <h3 class="item-title">1. Marketing B2B</h3>
-            <span class="item-badge">Prioridad 1</span>
-          </div>
-          <div class="item-body">
-            <p><strong>Tu día a día.</strong> Adereso vende a empresas, no a consumidores. Ciclos largos y múltiples decisores (marketing, CX, TI, finanzas) exigen venta consultiva.</p>
-            <ul class="item-bullets"><li><a href="https://platzi.com/ruta/marketing-b2b/" target="_blank" rel="noopener">Ver ruta en Platzi</a></li></ul>
-          </div>
-        </article>
-
-        <article class="report-item">
-          <div class="item-label">
-            <h3 class="item-title">2. Ventas, CRM y Experiencia del Cliente</h3>
-            <span class="item-badge">Prioridad 2</span>
-          </div>
-          <div class="item-body">
-            <p><strong>La base operativa.</strong> Dominar HubSpot y Salesforce (los CRMs que Adereso integra), gestionar pipeline y prospección de forma ordenada.</p>
-            <ul class="item-bullets"><li><a href="https://platzi.com/ruta/ventas-crm-y-experiencia-del-cliente/" target="_blank" rel="noopener">Ver ruta en Platzi</a></li></ul>
-          </div>
-        </article>
-
-        <article class="report-item">
-          <div class="item-label">
-            <h3 class="item-title">3. Negociación y Resolución de Conflictos</h3>
-            <span class="item-badge">Prioridad 3</span>
-          </div>
-          <div class="item-body">
-            <p><strong>El cierre.</strong> Contratos anuales, objeciones de precio y defensa del valor frente a alternativas "hazlo tú mismo".</p>
-            <ul class="item-bullets"><li><a href="https://platzi.com/ruta/negociacion-resolucion-conflictos/" target="_blank" rel="noopener">Ver ruta en Platzi</a></li></ul>
-          </div>
-        </article>
-
-        <article class="report-item">
-          <div class="item-label">
-            <h3 class="item-title">4. Comunicación Avanzada y Oratoria</h3>
-            <span class="item-badge">Prioridad 4</span>
-          </div>
-          <div class="item-body">
-            <p><strong>La demo.</strong> El CTA principal de Adereso es "hablar con un experto". Ganas o pierdes el deal en la presentación.</p>
-            <ul class="item-bullets"><li><a href="https://platzi.com/ruta/comunicacion-avanzada-oratoria/" target="_blank" rel="noopener">Ver ruta en Platzi</a></li></ul>
-          </div>
-        </article>
-
+    <div class="card">
+      <div class="card-head">
+        <span class="card-title">1. Marketing B2B</span>
+        <span class="badge">Prioridad 1</span>
       </div>
-    </section>
+      <p><strong>Tu día a día.</strong> Adereso vende a empresas, no a consumidores. Ciclos largos y múltiples decisores (marketing, CX, TI, finanzas) exigen venta consultiva.</p>
+      <a class="link" href="https://platzi.com/ruta/marketing-b2b/" target="_blank" rel="noopener">Ver ruta en Platzi</a>
+    </div>
 
-    <section class="report-section">
-      <div class="section-header"><h2 class="section-heading">II. Vender IA con autoridad</h2></div>
-      <div class="section-items">
-
-        <article class="report-item">
-          <div class="item-label">
-            <h3 class="item-title">5. IA para la Productividad</h3>
-          </div>
-          <div class="item-body">
-            <p><strong>El discurso de valor.</strong> Vendes un producto de IA generativa; necesitas hablar de agentes y modelos con seguridad ante clientes técnicos.</p>
-            <ul class="item-bullets"><li><a href="https://platzi.com/ruta/inteligencia-artificial-para-la-productividad/" target="_blank" rel="noopener">Ver ruta en Platzi</a></li></ul>
-          </div>
-        </article>
-
-        <article class="report-item">
-          <div class="item-label">
-            <h3 class="item-title">6. Automatización del Marketing</h3>
-          </div>
-          <div class="item-body">
-            <p><strong>Conoce lo que vendes.</strong> Chatbots, flujos y recuperación de carritos son el core de Adereso. Entiende el producto a fondo.</p>
-            <ul class="item-bullets"><li><a href="https://platzi.com/ruta/automatizacion-del-marketing/" target="_blank" rel="noopener">Ver ruta en Platzi</a></li></ul>
-          </div>
-        </article>
-
+    <div class="card">
+      <div class="card-head">
+        <span class="card-title">2. Ventas, CRM y Experiencia del Cliente</span>
+        <span class="badge">Prioridad 2</span>
       </div>
-    </section>
+      <p><strong>La base operativa.</strong> Dominar HubSpot y Salesforce (los CRMs que Adereso integra), gestionar pipeline y prospección de forma ordenada.</p>
+      <a class="link" href="https://platzi.com/ruta/ventas-crm-y-experiencia-del-cliente/" target="_blank" rel="noopener">Ver ruta en Platzi</a>
+    </div>
 
-    <section class="report-section">
-      <div class="section-header"><h2 class="section-heading">III. Entender al comprador</h2></div>
-      <div class="section-items">
-
-        <article class="report-item">
-          <div class="item-label">
-            <h3 class="item-title">7. Marketing para E-commerce</h3>
-          </div>
-          <div class="item-body">
-            <p><strong>El mundo de tus clientes.</strong> Falabella, Sodimac y Walmart son retail/ecommerce. Vender con contexto de su negocio te separa del vendedor genérico.</p>
-            <ul class="item-bullets"><li><a href="https://platzi.com/ruta/marketing-para-e-commerce/" target="_blank" rel="noopener">Ver ruta en Platzi</a></li></ul>
-          </div>
-        </article>
-
-        <article class="report-item">
-          <div class="item-label">
-            <h3 class="item-title">8. Fundamentos de Marketing Digital</h3>
-          </div>
-          <div class="item-body">
-            <p><strong>El funnel que monetizas.</strong> Ads → WhatsApp → conversión es exactamente el flujo que Adereso automatiza para sus clientes.</p>
-            <ul class="item-bullets"><li><a href="https://platzi.com/ruta/fundamentos-de-marketing-digital/" target="_blank" rel="noopener">Ver ruta en Platzi</a></li></ul>
-          </div>
-        </article>
-
+    <div class="card">
+      <div class="card-head">
+        <span class="card-title">3. Negociación y Resolución de Conflictos</span>
+        <span class="badge">Prioridad 3</span>
       </div>
-    </section>
+      <p><strong>El cierre.</strong> Contratos anuales, objeciones de precio y defensa del valor frente a alternativas "hazlo tú mismo".</p>
+      <a class="link" href="https://platzi.com/ruta/negociacion-resolucion-conflictos/" target="_blank" rel="noopener">Ver ruta en Platzi</a>
+    </div>
 
-    <section class="report-section">
-      <div class="section-header"><h2 class="section-heading">IV. Diferenciadores de carrera</h2></div>
-      <div class="section-items">
-
-        <article class="report-item">
-          <div class="item-label">
-            <h3 class="item-title">9. Domina Excel</h3>
-          </div>
-          <div class="item-body">
-            <p><strong>Vender con números.</strong> Construir el business case: ROI, "5X retorno", ahorro anual. Adereso vende con métricas, tú también deberías.</p>
-            <ul class="item-bullets"><li><a href="https://platzi.com/ruta/domina-excel/" target="_blank" rel="noopener">Ver ruta en Platzi</a></li></ul>
-          </div>
-        </article>
-
-        <article class="report-item">
-          <div class="item-label">
-            <h3 class="item-title">10. Marca Personal y Marketing Freelance</h3>
-          </div>
-          <div class="item-body">
-            <p><strong>Prospección que trabaja sola.</strong> Social selling en LinkedIn es tu canal #1 de reuniones en venta SaaS B2B.</p>
-            <ul class="item-bullets"><li><a href="https://platzi.com/ruta/marca-personal-y-marketing-freelance/" target="_blank" rel="noopener">Ver ruta en Platzi</a></li></ul>
-          </div>
-        </article>
-
-        <article class="report-item">
-          <div class="item-label">
-            <h3 class="item-title">11. Inglés de Negocios</h3>
-          </div>
-          <div class="item-body">
-            <p><strong>Techo salarial más alto.</strong> Si Adereso escala fuera de Chile, te habilita para cuentas regionales y mejor comisión.</p>
-            <ul class="item-bullets"><li><a href="https://platzi.com/ruta/ingles-negocios/" target="_blank" rel="noopener">Ver ruta en Platzi</a></li></ul>
-          </div>
-        </article>
-
+    <div class="card">
+      <div class="card-head">
+        <span class="card-title">4. Comunicación Avanzada y Oratoria</span>
+        <span class="badge">Prioridad 4</span>
       </div>
-    </section>
+      <p><strong>La demo.</strong> El CTA principal de Adereso es "hablar con un experto". Ganas o pierdes el deal en la presentación.</p>
+      <a class="link" href="https://platzi.com/ruta/comunicacion-avanzada-oratoria/" target="_blank" rel="noopener">Ver ruta en Platzi</a>
+    </div>
+  </section>
 
-    <section class="report-section">
-      <div class="section-header"><h2 class="section-heading">V. Ruta de arranque</h2></div>
-      <div class="section-items">
-        <article class="report-item">
-          <div class="item-label">
-            <h3 class="item-title">Los 4 primeros, en orden</h3>
-          </div>
-          <div class="item-body">
-            <p><strong>Marketing B2B → Ventas, CRM y CX → Negociación → IA para la Productividad.</strong> Ese camino te vuelve un comercial que entiende el ciclo B2B, maneja el CRM, cierra bien y habla de IA con autoridad, justo el perfil que necesita Adereso.</p>
-            <ul class="item-bullets">
-              <li>Empieza tu presencia en LinkedIn desde ya: en SaaS B2B, tu marca personal genera reuniones sola.</li>
-              <li>Practica cada demo grabándote; la oratoria mejora midiendo, no leyendo.</li>
-            </ul>
-          </div>
-        </article>
+  <section>
+    <h2>II. Vender IA con autoridad</h2>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="card-title">5. IA para la Productividad</span>
       </div>
-    </section>
+      <p><strong>El discurso de valor.</strong> Vendes un producto de IA generativa; necesitas hablar de agentes y modelos con seguridad ante clientes técnicos.</p>
+      <a class="link" href="https://platzi.com/ruta/inteligencia-artificial-para-la-productividad/" target="_blank" rel="noopener">Ver ruta en Platzi</a>
+    </div>
 
-  </main>
+    <div class="card">
+      <div class="card-head">
+        <span class="card-title">6. Automatización del Marketing</span>
+      </div>
+      <p><strong>Conoce lo que vendes.</strong> Chatbots, flujos y recuperación de carritos son el core de Adereso. Entiende el producto a fondo.</p>
+      <a class="link" href="https://platzi.com/ruta/automatizacion-del-marketing/" target="_blank" rel="noopener">Ver ruta en Platzi</a>
+    </div>
+  </section>
 
-</div></div>
+  <section>
+    <h2>III. Entender al comprador</h2>
 
-<div class="settings-wrap">
-  <div class="settings-panel" id="settingsPanel">
-    <div class="settings-header">Customize Report</div>
-    <div class="settings-swatches" id="settingsSwatches"></div>
-    <div class="settings-fonts" id="settingsFonts"></div>
-  </div>
-  <button class="settings-btn" id="settingsBtn" title="Customize">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-    </svg>
-  </button>
+    <div class="card">
+      <div class="card-head">
+        <span class="card-title">7. Marketing para E-commerce</span>
+      </div>
+      <p><strong>El mundo de tus clientes.</strong> Falabella, Sodimac y Walmart son retail/ecommerce. Vender con contexto de su negocio te separa del vendedor genérico.</p>
+      <a class="link" href="https://platzi.com/ruta/marketing-para-e-commerce/" target="_blank" rel="noopener">Ver ruta en Platzi</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="card-title">8. Fundamentos de Marketing Digital</span>
+      </div>
+      <p><strong>El funnel que monetizas.</strong> Ads → WhatsApp → conversión es exactamente el flujo que Adereso automatiza para sus clientes.</p>
+      <a class="link" href="https://platzi.com/ruta/fundamentos-de-marketing-digital/" target="_blank" rel="noopener">Ver ruta en Platzi</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>IV. Diferenciadores de carrera</h2>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="card-title">9. Domina Excel</span>
+      </div>
+      <p><strong>Vender con números.</strong> Construir el business case: ROI, "5X retorno", ahorro anual. Adereso vende con métricas, tú también deberías.</p>
+      <a class="link" href="https://platzi.com/ruta/domina-excel/" target="_blank" rel="noopener">Ver ruta en Platzi</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="card-title">10. Marca Personal y Marketing Freelance</span>
+      </div>
+      <p><strong>Prospección que trabaja sola.</strong> Social selling en LinkedIn es tu canal #1 de reuniones en venta SaaS B2B.</p>
+      <a class="link" href="https://platzi.com/ruta/marca-personal-y-marketing-freelance/" target="_blank" rel="noopener">Ver ruta en Platzi</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="card-title">11. Inglés de Negocios</span>
+      </div>
+      <p><strong>Techo salarial más alto.</strong> Si Adereso escala fuera de Chile, te habilita para cuentas regionales y mejor comisión.</p>
+      <a class="link" href="https://platzi.com/ruta/ingles-negocios/" target="_blank" rel="noopener">Ver ruta en Platzi</a>
+    </div>
+  </section>
+
+  <section class="startup">
+    <h2>V. Ruta de arranque</h2>
+    <div class="card">
+      <div class="card-head">
+        <span class="card-title">Los 4 primeros, en orden</span>
+      </div>
+      <p><strong>Marketing B2B → Ventas, CRM y CX → Negociación → IA para la Productividad.</strong> Ese camino te vuelve un comercial que entiende el ciclo B2B, maneja el CRM, cierra bien y habla de IA con autoridad, justo el perfil que necesita Adereso.</p>
+      <ul class="tips">
+        <li>Empieza tu presencia en LinkedIn desde ya: en SaaS B2B, tu marca personal genera reuniones sola.</li>
+        <li>Practica cada demo grabándote; la oratoria mejora midiendo, no leyendo.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    Plan de aprendizaje personalizado · Rutas de Platzi para un perfil comercial en Adereso
+  </footer>
+
 </div>
 </body>
 </html>
